@@ -1,5 +1,8 @@
 Twitch Echo Bot with Python
 ========
+[![License: GPL v3](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) [![Python 3](https://img.shields.io/badge/python-3-blue.svg)](https://www.python.org/) 
+
+Fast and easy way to use.
 
 ## Features
 
@@ -7,8 +10,17 @@ Twitch Echo Bot with Python
 - Send message.
 - Get new message.
 
-## How to use (in main.py)
+## Usage
 
+```bash
+
+git clone https://github.com/NatLee/Twitch-Echo-Bot-with-Python.git
+cd ./Twitch-Echo-Bot-with-Python
+python3 main.py
+
+```
+
+## Example (in main.py)
 
 ```python
 
@@ -27,3 +39,10 @@ while True:
       except(KeyboardInterrupt, EOFError, SystemExit):
           break
 ```
+
+## Contributors
+
+[NatLee](https://github.com/NatLee/)
+
+## License
+[MIT license](./LICENSE)
