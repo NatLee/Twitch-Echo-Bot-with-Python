@@ -13,11 +13,7 @@ Fast and easy way to use.
 ## Usage
 
 ```bash
-
 git clone https://github.com/NatLee/Twitch-Echo-Bot-with-Python.git
-cd ./Twitch-Echo-Bot-with-Python
-python3 main.py
-
 ```
 
 ## Example (in main.py)
