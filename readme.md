@@ -1,29 +1,29 @@
 Twitch Echo Bot with Python
-
-Features
 ========
+
+## Features
 
 - Join the twitch channel.
 - Send message.
 - Get new message.
 
-How to use (in main.py)
-==========
+## How to use (in main.py)
 
-.. code:: python
 
-  from twitchSocket import twitchSocket
+```python
 
-  ts = twitchSocket(channelName='<YourCannelName>',
-                    botName    ='<YourBotAccountName>', 
-                    botAuth    ='<YourBotAccountTwitchAuthKey')
+from twitchSocket import twitchSocket
 
-  while True:
-        try:
-            username, message = ts.getMsg()
-            # Your logic here.
-            ts.sendMsg(message)
+ts = twitchSocket(channelName='<YourCannelName>',
+                  botName    ='<YourBotAccountName>', 
+                  botAuth    ='<YourBotAccountTwitchAuthKey')
 
-        except(KeyboardInterrupt, EOFError, SystemExit):
-            break
+while True:
+      try:
+          username, message = ts.getMsg()
+          # Your logic here.
+          ts.sendMsg(message)
 
+      except(KeyboardInterrupt, EOFError, SystemExit):
+          break
+```
