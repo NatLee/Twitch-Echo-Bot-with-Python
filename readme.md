@@ -22,7 +22,7 @@ git clone https://github.com/NatLee/Twitch-Echo-Bot-with-Python.git
 
 from twitchSocket import twitchSocket
 
-ts = twitchSocket(channelName='<YourCannelName>',
+ts = twitchSocket(channelName='<YourChannelName>',
                   botName    ='<YourBotAccountName>', 
                   botAuth    ='<YourBotAccountTwitchAuthKey')
 
