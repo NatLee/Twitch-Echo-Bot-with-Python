@@ -1,8 +1,8 @@
 from twitchSocket import twitchSocket
 
-ts = twitchSocket(channelName='<YourCannelName>',
-                  botName    ='<YourBotAccountName>', 
-                  botAuth    ='<YourBotAccountTwitchAuthKey')
+ts = twitchSocket(channelName='<YourChannelName>',
+                  botName    ='<YourBotTwitchAccountID>', 
+                  botAuth    ='<YourBotTwitchAccountAuthKey')
 
 while True:
     try:

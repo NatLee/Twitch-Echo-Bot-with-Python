@@ -1,8 +1,9 @@
 import socket
 
+
 class twitchSocket(object):
     def __init__(self, channelName:str, botName:str, botAuth:str):
-        self.__HOST = "irc.twitch.tv"
+        self.__HOST = 'irc.twitch.tv'
         self.__PORT = 6667
         self.__NICK = botName
         self.__PASS = botAuth
@@ -11,7 +12,6 @@ class twitchSocket(object):
         self.__s = self.__setSocket()
 
         while True:
-            # Get first packet.
             if 'End of /NAMES list' in self.__getPacket():
                 break
 
@@ -40,17 +40,24 @@ class twitchSocket(object):
         rawData = self.__getPacket()
         if 'PING :tmi.twitch.tv' in rawData:
             self.__sendPong()
-
+        # Filter the twitch send <3
+        # Avoid twitch ping you without any message.
+        if len(rawData.split(':')) < 3:
+            return None
         return rawData
 
     def getMsg(self) -> tuple:
+        username = None
+        message = None
         try:
             rawData = self.__getDataFromPacket()
-
-            username = rawData.split(':')[1].split('!')[0]
-            message = rawData.split(':')[2].strip()
-            print(username + ': '+ message)
+            # get message and username with extracting raw data.
+            if rawData is not None:
+                username = rawData.split(':')[1].split('!')[0]
+                message = rawData.split(':')[2].strip()
+                print(username + ': '+ message)
         except Exception as e:
+            print(rawData)
             print(e)
 
         return username, message
